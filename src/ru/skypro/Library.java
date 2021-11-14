@@ -8,28 +8,28 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        boolean add = false;
+
 
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
                 books[i] = book;
-                add = true;
+
                 return;
 
             }
 
 
         }
-        if (!add) {
-            System.out.println("Ошибка ! библиотека полная,книга не добавлена!");
-        }
+        System.out.println("Ошибка ! библиотека полная,книга не добавлена!");
+
+
 
     }
 
     public void printBook(String name) {
         for (Book book : books) {
 
-            if (book == null) continue;
+            if (book == null) {continue;};
             if (book.getName().equalsIgnoreCase(name)) {
                 System.out.println(book.toString());
                 return;
@@ -45,7 +45,7 @@ public class Library {
 
     public void setYearPublishing(String name, int year) {
         for (Book book : books) {
-            if (book == null) continue;
+            if (book == null) {continue;};
             if (book.getName().equalsIgnoreCase(name)) {
                 book.setYearPublishing(year);
                 return;
